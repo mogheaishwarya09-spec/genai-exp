@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aishwarya Namdev Moghe – GenAI Experiments</title>
+<style>
+:root{--bg:#f6f5ff;--card:#fff;--text:#1d1b2e;--muted:#6b6880;--accent:#6d4aff;--accent2:#ff6fb1;--border:#e6e3f5;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12111c;--card:#1c1a2b;--text:#f1effa;--muted:#a09cba;--accent:#9b82ff;--accent2:#ff8ac0;--border:#2d2a44}}
+:root[data-theme="dark"]{--bg:#12111c;--card:#1c1a2b;--text:#f1effa;--muted:#a09cba;--accent:#9b82ff;--accent2:#ff8ac0;--border:#2d2a44}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.5}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px 56px}
+header{padding:56px 0 28px;text-align:center}
+.badge{display:inline-block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);border:1px solid var(--border);background:var(--card);padding:5px 12px;border-radius:999px}
+h1{margin:16px 0 8px;font-size:clamp(28px,6vw,46px);line-height:1.15;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+header p{margin:0 auto;max-width:560px;color:var(--muted)}
+.actions{margin-top:22px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-size:14px;font-weight:600;padding:10px 16px;border-radius:10px;border:1px solid var(--border);color:var(--text);background:var(--card)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn:hover{transform:translateY(-1px)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-top:12px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:12px}
+.top{display:flex;align-items:center;gap:12px}
+.num{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-weight:700;color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent2));flex:none}
+.card h2{margin:0;font-size:18px}
+.file{margin:0;font-size:13px;color:var(--muted);word-break:break-all}
+.links{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
+.links .btn{padding:8px 12px;font-size:13px}
+footer{text-align:center;color:var(--muted);font-size:13px;margin-top:40px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<span class="badge">Generative AI Lab</span>
+<h1>Aishwarya Namdev Moghe</h1>
+<p>My GenAI practical experiments, Experiment 1 to 10. Open any notebook to view the code.</p>
+<div class="actions">
+<a class="btn primary" href="https://github.com/mogheaishwarya09-spec/genAIaish" target="_blank" rel="noopener">View GitHub Repo</a>
+</div>
+</header>
+<main class="grid" id="grid"></main>
+<footer>© Aishwarya Namdev Moghe · GenAI Experiments</footer>
+</div>
+<script>
+var repo="https://github.com/mogheaishwarya09-spec/genAIaish";
+var colab="https://colab.research.google.com/github/mogheaishwarya09-spec/genAIaish/blob/main/";
+var drive="https://drive.google.com/file/d/15P1yQD2FUR7X6Cz_pcHYJOv2kXe8SDeu/view?usp=sharing";
+var files=["aishu_exp1.ipynb","aish_exp2.ipynb","aishwarya_exp3.ipynb","aishwarya_exp4.ipynb","aishwarya_exp5.ipynb",null,"aishwarya_exp7.ipynb","aishwarya_exp8.ipynb","aish_exp9.ipynb","aish_10.ipynb"];
+var html="";
+for(var i=0;i<files.length;i++){
+  var f=files[i],n=i+1,links;
+  if(f){
+    links='<a class="btn primary" href="'+repo+'/blob/main/'+f+'" target="_blank" rel="noopener">View Code</a>'+
+          '<a class="btn" href="'+colab+f+'" target="_blank" rel="noopener">Open in Colab</a>';
+  } else {
+    links='<a class="btn primary" href="'+drive+'" target="_blank" rel="noopener">View on Drive</a>';
+  }
+  html+='<article class="card"><div class="top"><div class="num">'+n+'</div><h2>Experiment '+n+'</h2></div>'+
+        '<p class="file">'+(f?f:'Google Drive file')+'</p><div class="links">'+links+'</div></article>';
+}
+document.getElementById("grid").innerHTML=html;
+</script>
+</body>
+</html>
